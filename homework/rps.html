@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>
+	</title>
+<script>
+function Play(){
+    A = document.rps.a.value;
+    B = Math.floor((Math.random() * 3) + 1);
+    if(B==1){document.rps.b.value="Rock"}
+    if(B==2){document.rps.b.value="Paper"}
+    if(B==3){document.rps.b.value="Scissors"}
+    checkWinner();
+}
+function checkWinner(){
+    var P1 = document.getElementById('p1').value;
+    var P2 = document.getElementById('p2').value;
+    A = document.rps.a.value;
+    B = document.rps.b.value;
+    
+    if(A=="Rock" && B=="Paper"){
+        var New = parseInt(P2,10) + 1;
+        document.getElementById('p2').value = New;
+    }
+    if(A=="Rock" && B=="Scissors"){
+        var New = parseInt(P1,10) + 1;
+        document.getElementById('p1').value = New;
+    }
+    if(A=="Paper" && B=="Rock"){
+        var New = parseInt(P1,10) + 1;
+        document.getElementById('p1').value = New;
+    }
+    if(A=="Paper" && B=="Scissors"){
+        var New = parseInt(P2,10) + 1;
+        document.getElementById('p2').value = New;
+    }
+    if(A=="Scissors" && B=="Rock"){
+        var New = parseInt(P2,10) + 1;
+        document.getElementById('p2').value = New;
+    }
+    if(A=="Scissors" && B=="Paper"){
+        var New = parseInt(P1,10) + 1;
+        document.getElementById('p1').value = New;
+    }
+}
+	</script>
+</head>
+
+<body>
+    <form><a class="btn" href="/schisty/index.html">Back</a></form>
+<form name="rps">
+<input id=p1 value=0 style="border-width: 0;width: 3%;" /><input type="text" name="a" /><input type="button" value="play or something" onclick="Play()"/><input type="text" name="b" /><input id=p2 value=0 style="border-width: 0;width: 3%;" />
+
+</form>
+	</body>
+</html>

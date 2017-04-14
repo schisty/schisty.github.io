@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function starter(){						// Определение функции starter
+		N = parseInt(prompt("Введите число."));				// Определение переменной N как число из окна, показанная пользователю
+			razborka(N);				// Вызов функции razborka с аргументом N
+}
+	function razborka(N){				// Определение функции разборка с обязательным аргументом N
+		deliteli = Array(2,3,5,7);			// Определение delitely как массив, в котором есть числа 2, 3, 5, 7
+		i = 0				// Задаём переменной i значение 0
+		do {				// Выполняем действие описанное далее
+			Ostatok = N % deliteli[i]			// Задаём переменной Ostatok значение результата деления переменной N и числа из массива deliteli под номером i
+			if(Ostatok == 0){}else{i++}
+			
+			}while(Ostatok != 0 && i < deliteli.length);
+			if (Ostatok != 0){
+				alert("Число "+N+" не делится.")}
+			else{
+				alert("Число "+N+" делится на "+deliteli[i])
+				N = N / deliteli[i];
+				razborka(N);
+}}
+starter();
+	</script>
+<meta charset="utf-8" />
+<title>
+	</title>
+</head>
+
+<body>
+	</body>
+</html>
