@@ -1,4 +1,4 @@
-<form><a class="btn" href="/schisty/index.html">Back</a></form> 
+<div><a class="btn" href="https://www.schisty.github.io/">Back</a></div> 
 
 <?php
 $ljudi=array(); //Создали общий массив
