@@ -8,7 +8,7 @@ session_start();
     </head>
 
 <body>
-<form><a class="btn" href="/schisty/index.html">Back</a></form>
+    <div><a class="btn-linkback" href="/schisty/index.html">Back</a></div>
 <form method="GET" action="">
     <select name="page" onchange="submit()">
     <option value="start">Starter</option>
