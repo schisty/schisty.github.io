@@ -1,4 +1,4 @@
-<form><a class="btn" href="/schisty/index.html">Back</a></form>
+    <div><a class="btn-linkback" href="/schisty/index.html">Back</a></div>
 <?php 
 $menuList=array();
 $menuList['home']['ru']="Начальная";
