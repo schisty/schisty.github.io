@@ -1,4 +1,4 @@
-<a class="btn" href="/schisty/index.html">Back</a>
+    <div><a class="btn-linkback" href="/schisty/index.html">Back</a></div>
 <?php
 // 1
 
