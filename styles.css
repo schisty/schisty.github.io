@@ -12,18 +12,11 @@ a.btn-link {
 }
 
 /* unvisited link */
-a.btn-link:link {
+a.btn-link:link, a.btn-link:visited {
     color: white;
     background-color: #2c2a2a;
     text-decoration: none;
-}
-
-/* visited link */
-a.btn-link:visited {
-    color: white;
-    background-color: #2c2a2a;
-    text-decoration: none;
-}
+} 
 
 /* mouse over link */
 a.btn-link:hover {
