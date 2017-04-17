@@ -28,7 +28,7 @@ a.btn-link:visited {
 /* mouse over link */
 a.btn-link:hover {
     color: white;
-    background-color: #0c0c0c;
+    background-color: #383535;
     text-decoration: none;
 }
 
@@ -37,13 +37,16 @@ a.btn-link:active {
 box-shadow: 0px 0px 0px
 }
 
+.btn-link, .dropbtn{
+    font-family: serif;
+}
 /* Dropdown Button */
 .dropbtn {
     background-color: #2c2a2a;
     width: 180px;
     color: white;
     padding: 16px;
-    font-size: 16px;
+    font-size: 125%;
     border: none;
     cursor: pointer;
 }
@@ -59,9 +62,9 @@ box-shadow: 0px 0px 0px
     display: none;
     width: 180px;
     position: absolute;
-    background-color: #333333;
+    background-color: #545454;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 1px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
@@ -74,7 +77,7 @@ box-shadow: 0px 0px 0px
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #2c2a2a}
+.dropdown-content a:hover {background-color: #666666}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
@@ -83,5 +86,5 @@ box-shadow: 0px 0px 0px
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-    background-color: #0c0c0c;
+    background-color: #383535;
 }
