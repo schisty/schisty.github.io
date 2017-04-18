@@ -1,8 +1,8 @@
 
-<body>
+<body onmousemove="fuck()">
 <center>
    <body style="background-color:black;">
-    <video  id="memes" playsinline autoplay loop>
+    <video  id="memes">
     <source src="bean.mp4" type="video/mp4">
     </video>
 <!--
@@ -12,4 +12,10 @@
     </audio>
 -->
 </center>
+    <script>
+    function fuck() {
+        document.getElementById("memes").play();
+    }
+    
+    </script>
 </body>
