@@ -1,5 +1,5 @@
 
-<body onmousemove="fuck()">
+<body onmousemove="fuck()" on>
 <center>
    <body style="background-color:black;">
     <video  id="memes">
@@ -17,14 +17,10 @@
         document.getElementById("memes").play();
     }
     
-   if(navigator.userAgent.match(/iPhone/i)){
-      fuck();
-   }
-
-
-   if(navigator.userAgent.match(/Android/i)){
-       fuck();
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        alert("fuck off and get on this page from your computer, you dirty fucking ape")
     }
+    
         
     
     
