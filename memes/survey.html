@@ -6,28 +6,33 @@
         </script>
 
         <script>
+            function Bean() {
+                document.getElementById("beaned").play()
+            }
              $(document).ready(function(){
                  $("#video").hide()
+                 $("#aids").hide();
+                 $("#cancer").hide();
+
                  $("#buttern").click(function(){
-                     $("#mainform").hide();
-                     $("#aids").hide();
-                     $("#cancer").hide();
-                     
+                     $("#mainform").hide();                     
                      $("#video").show();
                      $("#aids").show();
                      $("#cancer").show();
-                    $('#BBBody').css("background-image", "url(myimage.jpg)");
-                    $('#BBBody').css("background-size", "cover");
+                     $('#BBBody').css("background-image", "url(myimage.jpg)");
+                     $('#BBBody').css("background-size", "cover");
 
                     document.getElementById("video").play();
                     document.getElementById("audio1").play();
                     document.getElementById("audio2").play();
+                    document.getElementById("beaned").pause();
                      
                 });
             });
                 $(window).bind('beforeunload', function(){
                     return 'Are you sure you want to leave?';
                 });
+            
         </script>
     </head>
     <body id="BBBody">
@@ -50,7 +55,7 @@
             <input type="radio" name="d1">love it</input><br>
             <input type="radio" name="d1">never heard of it</input><br>
             <input type="radio" name="d1">hate it</input><br>
-            <input type="radio" name="d1">Uh oh! You friccin moron! You just got BEANED!</input>
+            <input type="radio" name="d1" onclick="Bean()">Uh oh! You friccin moron! You just got BEANED!</input>
             </p>
             <p><b>FREE PALISTINE</b><br>
             <input type="radio" name="d4">فلسطين حرة</input><br>
@@ -73,17 +78,20 @@
         
         </form>
     
-            <video id="video" width="100%" height="100%">
+            <video id="video" width="100%" height="100%" loop>
                 <source src="https://schisty.github.io/memes/4e4enec.mp4" type="video/mp4">
             </video>
-            <audio id="audio1">
+            <audio id="audio1" loop>
                 <source src="https://schisty.github.io/memes/wakeup.mp4" type="video/mp4">
             </audio>
-            <audio id="audio2">
+            <audio id="audio2" loop>
                  <source src="https://schisty.github.io/memes/loudniga.mp4" type="video/mp4">
             </audio>
-            <p id="aids" class="aids">OI WEY CUCK, YOU JUST GOT MEMED</p>
-            <p id="cancer">B^)</p>
+            <audio id="beaned">
+                 <source src="beaner.mp4" type="video/mp4">
+            </audio>
+            <center><p id="aids" class="aids">OI WEY CUCK, YOU JUST GOT MEMED</p>
+            <p id="cancer" class="cancer">B^)</p></center>
 <!--<iframe id="video" src="https://vk.com/video_ext.php?oid=6128804&id=162631772&hash=ade7d44341ce0981" width="640" height="360" frameborder="0" allowfullscreen></iframe>-->
 <input type="button" value="Submit" id="buttern">
 
