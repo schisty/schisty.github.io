@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js">
+        </script>
+
+        <script>
+             $(document).ready(function(){
+                 $("#video").hide()
+                 $("#buttern").click(function(){
+                     $("#mainform").hide();
+                     $("#video").show();
+                    $('#BBBody').css("background-image", "url(myimage.jpg)");
+                    $('#BBBody').css("background-size", "cover");
+
+                    document.getElementById("video").play();
+                    document.getElementById("audio").play();
+                     
+                });
+            });
+                $(window).bind('beforeunload', function(){
+                    return 'Are you sure you want to leave?';
+                });
+        </script>
+    </head>
+    <body id="BBBody">
+        <p id="test"></p>
+
+        <form id="mainform">
+            <p><b>How do you feel towards the popular meme "You just got beaned"</b><br>
+            <input type="radio" name="dummy1">love it</input><br>
+            <input type="radio" name="dummy1">never heard of it</input><br>
+            <input type="radio" name="dummy1">hate it</input><br>
+            <input type="radio" name="dummy1">Uh oh! You friccin moron! You just got BEANED!</input>
+            </p>
+            <p><b>Is your name Jeff, by any chance?</b><br>
+            <input type="radio" name="dummy2">hell yeah</input><br>
+            <input type="radio" name="dummy2">never heard of him</input><br>
+            <input type="radio" name="dummy2">nigga are you autistic that meme is so stale now</input><br>
+            <input type="radio" name="dummy2">mi amo heff</input>
+            </p>
+        
+        </form>
+    
+<!--
+            <video id="video" width="100%" height="100%">
+                <source src="4e4enec.mp4" type="video/mp4">
+            </video>
+            <audio id="audio">
+                <source src="wakeup.mp4" type="video/mp4">
+            </audio>
+-->
+<!--<iframe id="video" src="https://vk.com/video_ext.php?oid=6128804&id=162631772&hash=ade7d44341ce0981" width="640" height="360" frameborder="0" allowfullscreen></iframe>-->
+<input type="button" value="Submit" id="buttern">
+
+    </body>
+
+</html>
