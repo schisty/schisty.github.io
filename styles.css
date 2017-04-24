@@ -1,11 +1,12 @@
 a.btn-link {
     display:block;
+/*    font-family: serif;*/
     background-color: black;
 /*    border-radius: 5px; */
 /*    box-shadow: 4px 4px 6px #2c2a2a;*/
     width: 180px;
     text-align: left;
-    line-height: 50px;
+    line-height: 54px;
     text-decoration: none;
     padding-left: 15px;
     font-size: 125%;
@@ -25,23 +26,24 @@ a.btn-link:hover {
     text-decoration: none;
 }
 
-/* selected link */
+/* selected link
 a.btn-link:active {
-box-shadow: 0px 0px 0px
+box-shadow: 0px 0px 0px*/
 }
 
 .btn-link, .dropbtn{
-    font-family: serif;
+/*    font-family: serif;*/
 }
 /* Dropdown Button */
 .dropbtn {
     background-color: #2c2a2a;
-    width: 180px;
+    width: 220px;
     color: white;
     padding: 16px;
-    font-size: 125%;
+    font-size: 105%;
     border: none;
     cursor: pointer;
+    text-align: left;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -53,7 +55,7 @@ box-shadow: 0px 0px 0px
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
-    width: 180px;
+    width: 220px;
     position: absolute;
     background-color: #545454;
     min-width: 160px;
