@@ -1,3 +1,14 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+<script>
+$(document).ready(function(){
+    document.getElementById('awoo').play();
+    $("#momiji").fadeIn(65000);
+});    
+    </script>
+</head>
+<!--
 <style>
     img {
         animation-name: transition;
@@ -9,9 +20,10 @@
     }
 
 </style>
+-->
 <body style="background-color:#FCFEFC; padding: 120px;">
-<center><img src="memes/momiji.gif">
-<audio id="awoo" autoplay>
+<center><img id="momiji" src="memes/momiji.gif" style="display: none;">
+<audio id="awoo">
 <source src="https://schisty.github.io/memes/awoo.mp3" type="audio/mp3">
 </audio></center>
 </body>
