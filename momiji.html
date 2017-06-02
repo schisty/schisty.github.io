@@ -1,28 +1,32 @@
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
-    
-<script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
 
-$(document).ready(function(){
-    document.getElementById('awoo').play();
-    $("#momiji").fadeIn(65000);
-    $("#help").delay(38750).show(0);
-    $("#song").delay(130000).fadeIn(5000);
-    $("#sadfrog").delay(250000).animate({opacity:0.10}, 20000);
-    $("#song").delay(200000).fadeIn(5000);
-});
+    <script>
+        $(document).ready(function() {
+            document.getElementById('awoo').play();
+            $("#momiji").fadeIn(65000);
+            $("#help").delay(38750).show(0);
+            $("#song").delay(130000).fadeIn(5000);
+            $("#sadfrog").delay(250000).animate({
+                opacity: 0.10
+            }, 20000);
+            $("#song").delay(200000).fadeIn(5000);
+        });
+
     </script>
 </head>
+
 <body style="background-color:#FCFEFC; padding: 120px;">
 
-<div id="song" style="position:absolute; bottom:1; left:1; display: none; font-family:'Audiowide';">Song: Goldfish - This Is How It Goes</div>
-<center style="">
-<img id="momiji" src="memes/momiji.gif" style="display: none;">
-<audio id="awoo"><source src="memes/awoo.mp3" type="audio/mp3"></audio>
+    <div id="song" style="position:absolute; bottom:1; left:1; display: none; font-family:'Audiowide';">Song: Goldfish - This Is How It Goes</div>
+    <center style="">
+        <img id="momiji" src="memes/momiji.gif" style="display: none;">
+        <audio id="awoo"><source src="memes/awoo.mp3" type="audio/mp3"></audio>
 
-<div id="help" style="display: none;"><h1 style="font-family:sans-serif;">I WANT TO DIE</h1></div>
-    
-<img src="memes/sad.jpg" id="sadfrog" style="position:absolute;top:1;left:1;opacity:0;" height="99.9%" width="99.9%"
-</center>
+        <div id="help" style="display: none;">
+            <h1 style="font-family:sans-serif;">I WANT TO DIE</h1>
+        </div>
+
+        <img src="memes/sad.jpg" id="sadfrog" style="position:absolute;top:1;left:1;opacity:0;" height="99.9%" width="99.9%" </center>
 </body>
