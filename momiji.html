@@ -2,9 +2,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
 <script>
+
 $(document).ready(function(){
     document.getElementById('awoo').play();
     $("#momiji").fadeIn(65000);
+    $("#help").delay(38500).show(0);
+   // $("#help").show()
 });    
     </script>
 </head>
@@ -22,8 +25,11 @@ $(document).ready(function(){
 </style>
 -->
 <body style="background-color:#FCFEFC; padding: 120px;">
-<center><img id="momiji" src="memes/momiji.gif" style="display: none;">
-<audio id="awoo">
-<source src="https://schisty.github.io/memes/awoo.mp3" type="audio/mp3">
-</audio></center>
+<center>
+<img id="momiji" src="memes/momiji.gif" style="display: none;">
+<audio id="awoo"><source src="https://schisty.github.io/memes/awoo.mp3" type="audio/mp3"></audio>
+
+<div id="help" style="display: none;"><h1 style="font-family:sans-serif;">I WANT TO DIE</h1></div>
+
+</center>
 </body>
