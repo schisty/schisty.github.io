@@ -1,9 +1,34 @@
-#momiji-child {
+#momiji-child1 {
     position: absolute;
-    animation: myOrbit 20s linear infinite;
+    animation: myOrbit1 20s linear infinite;
+}
+#momiji-child2 {
+    position: absolute;
+    animation: myOrbit2 20s linear infinite;
+}
+#momiji-child3 {
+    position: absolute;
+    animation: myOrbit3 20s linear infinite;
+}
+#momiji-child4 {
+    position: absolute;
+    animation: myOrbit4 20s linear infinite;
 }
 
-@keyframes myOrbit {
+
+@keyframes myOrbit1 {
     from { transform: rotate(0deg) translateX(250px) rotate(0deg); }
     to   { transform: rotate(360deg) translateX(250px) rotate(-360deg); }
+}
+@keyframes myOrbit2 {
+    from { transform: rotate(0deg) translateX(-250px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(-250px) rotate(-360deg); }
+}
+@keyframes myOrbit3 {
+    from { transform: rotate(0deg) translateY(-250px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateY(-250px) rotate(-360deg); }
+}
+@keyframes myOrbit4 {
+    from { transform: rotate(0deg) translateY(250px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateY(250px) rotate(-360deg); }
 }
