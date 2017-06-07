@@ -17,18 +17,18 @@
 
 
 @keyframes myOrbit1 {
-    from { transform: rotate(0deg) translateX(250px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(250px) rotate(-360deg); }
+    from { transform: rotate(0deg) translateX(300px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(300px) rotate(-360deg); }
 }
 @keyframes myOrbit2 {
-    from { transform: rotate(0deg) translateX(-250px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(-250px) rotate(-360deg); }
+    from { transform: rotate(0deg) translateX(-300px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(-300px) rotate(-360deg); }
 }
 @keyframes myOrbit3 {
-    from { transform: rotate(0deg) translateY(-250px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateY(-250px) rotate(-360deg); }
+    from { transform: rotate(0deg) translateY(-300px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateY(-300px) rotate(-360deg); }
 }
 @keyframes myOrbit4 {
-    from { transform: rotate(0deg) translateY(250px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateY(250px) rotate(-360deg); }
+    from { transform: rotate(0deg) translateY(300px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateY(300px) rotate(-360deg); }
 }
