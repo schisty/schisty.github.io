@@ -6,17 +6,25 @@
     <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
     <title>~ Awoo</title>
     <link rel="shortcut icon" href="momiji-icon.ico" type="image/x-icon">
-
 </head>
 
 <body style="background-color:#FCFEFC;">
-    <div style="position:absolute;left:40%;top:25%;text-align: center;vertical-align: middle;line-height: 100;">
-        <img id="momiji-child" src="memes/momiji.gif" style="    width:auto;height:25%; padding: 140px;">
-        <div style="z-index:-1; background-color:red;position:absolute"></div>
-        
-        <img id="momiji" src="memes/momiji.gif" style="">
-        
-        
-        <audio id="awoo" autoplay loop><source src="memes/awoo.mp3" type="audio/mp3"></audio>
+    <div id="momijifamily" style="position:absolute;left:40%;top:25%;text-align: center;vertical-align: middle;line-height: 100;">
+        <img class="children" id="momiji-child1" src="memes/momiji.gif" style="display: none;width:auto;height:25%; padding: 140px;">
+        <img class="children" id="momiji-child2" src="memes/momiji.gif" style="display: none;width:auto;height:25%; padding: 140px;">
+        <img class="children" id="momiji-child3" src="memes/momiji.gif" style="display: none;width:auto;height:25%; padding: 140px;">
+        <img class="children" id="momiji-child4" src="memes/momiji.gif" style="display: none;width:auto;height:25%; padding: 140px;">
+        <img id="momiji" src="memes/momiji.gif" style="display:none">
+        <audio id="awoo" loop><source src="memes/awoo.mp3" type="audio/mp3"></audio>
         </div>
+<script>
+        $(document).ready(function() {
+            document.getElementById('awoo').play();
+            $("#momiji").fadeIn(65000);
+            $(".children").fadeIn(90000);
+            
+            $("#song").delay(90000).fadeIn(5000);
+        });
+</script>
+
 </body>
