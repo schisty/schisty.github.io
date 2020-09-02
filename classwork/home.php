@@ -1,1 +1,0 @@
-<h1>ayy lmao this the starter page my dude B^)</h1>
