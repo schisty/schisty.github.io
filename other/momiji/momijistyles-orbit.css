@@ -43,7 +43,7 @@
 
 
 #momijifamily {
-    position:absolute;
+    position:fixed;
     left:40%;
     top:25%;
     text-align: center;
@@ -60,7 +60,7 @@
 #song {
     display: none; 
     font-family:'Audiowide';
-    position: absolute; 
+    position: fixed; 
     left:0px; 
     bottom:0px;
 }
