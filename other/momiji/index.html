@@ -1,30 +1,34 @@
 <head>
-
-    <link rel="stylesheet" type="text/css" href="momijistyles-orbit.css">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
-    <title>~ Awoo</title>
+    <link rel="stylesheet" type="text/css" href="momijistyles-orbit.css">
     <link rel="shortcut icon" href="momiji-icon.ico" type="image/x-icon">
+
+    <title>~ Awoo</title>
 </head>
 
-<body style="background-color:#FCFEFC;">
-    <div id="momijifamily" style="position:absolute;left:40%;top:25%;text-align: center;vertical-align: middle;line-height: 100;">
-        <img class="children" id="momiji-child1" src="memes/momiji.gif" style="display: none;width:auto;height:25%; padding: 140px;">
-        <img class="children" id="momiji-child2" src="memes/momiji.gif" style="display: none;width:auto;height:25%; padding: 140px;">
-        <img class="children" id="momiji-child3" src="memes/momiji.gif" style="display: none;width:auto;height:25%; padding: 140px;">
-        <img class="children" id="momiji-child4" src="memes/momiji.gif" style="display: none;width:auto;height:25%; padding: 140px;">
-        <img id="momiji" src="memes/momiji.gif" style="display:none">
-        <audio id="awoo" loop><source src="memes/awoo.mp3" type="audio/mp3"></audio>
-        </div>
 <script>
-        $(document).ready(function() {
-            document.getElementById('awoo').play();
-            $("#momiji").fadeIn(65000);
-            $(".children").fadeIn(90000);
+    function btnClick(){
+        document.getElementById("buttonPlay").style.display = "none";
+        document.getElementById('awoo').play();
+        $("#momiji").fadeIn(65000);
+        $(".children").delay(35000).fadeIn(30000);
+        
+        $("#song").delay(90000).fadeIn(5000);
+    }
             
-            $("#song").delay(90000).fadeIn(5000);
-        });
 </script>
 
+<body style="background-color:#FCFEFC;">
+    <button id="buttonPlay" onclick="btnClick()">START</button>
+    <div id="momijifamily">
+        <img class="children" id="momiji-child1" src="momiji.gif">
+        <img class="children" id="momiji-child2" src="momiji.gif">
+        <img class="children" id="momiji-child3" src="momiji.gif">
+        <img class="children" id="momiji-child4" src="momiji.gif">
+        <img id="momiji" src="momiji.gif" style="display:none">
+        <audio id="awoo" loop><source src="awoo.mp3" type="audio/mp3"></audio>
+    </div>
+
+    <div id="song">Song: Goldfish - This Is How It Goes</div>
 </body>
