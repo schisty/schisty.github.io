@@ -1,0 +1,19 @@
+#main {
+    /* Ensure that #main is an offset container */
+    position: relative;
+  }
+  #map {
+    /* Position the image at 0,0 */
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+  #mark {
+    /* Position the div at 16,16 (middle of the 32x32 image */
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 1px;
+  }
