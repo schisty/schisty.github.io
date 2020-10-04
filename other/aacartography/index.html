@@ -1,16 +1,35 @@
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="fontawesome-free-5.15.0-web/css/all.css" rel="stylesheet">
 </head>
 <body style="margin:0px;">
     <script>
-        
-        function dothings(){
-            
-            var x_scale = Math.abs((-3.576389)-(0))/Math.abs(769-860);
-            var y_scale = Math.abs((-19.061944)-(0))/Math.abs(723-249);
 
-            var zeroX = 883
-            var zeroY = 249
+        var currentScale = 1;
+
+        function findCoordinate(scale){
+            
+            currentScale = scale;
+
+            var x_scale1 = (Math.abs(-10.16944 - 0)/Math.abs(266 - 525));
+            var y_scale1 = (Math.abs(-10.16944 - 0)/Math.abs(418 - 165));
+
+            var x_scale2 = (Math.abs(-8.14416667 - -2.26972222)/Math.abs(726 - 580));
+            var y_scale2 = (Math.abs(-19.35055556 - -20.79611111)/Math.abs(644 - 680));
+
+            var x_scale3 = (Math.abs(2.11750000 - 13.33694444)/Math.abs(470 - 190));
+            var y_scale3 = (Math.abs(-19.71333333 - -17.91055556)/Math.abs(653 - 608));
+
+            var x_scale = ((x_scale1 + x_scale2 + x_scale3) / 3);
+            var y_scale = ((y_scale1 + y_scale2 + y_scale3) / 3);
+            // var x_scale = (Math.abs(-10.16944 - 0)/Math.abs(266 - 525));
+            // var y_scale = (Math.abs(-10.16944 - 0)/Math.abs(418 - 165));
+
+            console.log(x_scale);
+            console.log(y_scale);
+
+            var zeroX = 525;
+            var zeroY = 165;
 
             var xDegree = parseInt(document.getElementById("xCoordDegree").value);
             var xMinute = parseInt(document.getElementById("xCoordMinute").value);
@@ -27,31 +46,71 @@
             if(document.getElementById("yCoordDirection").value == "N") yInputDecimalDegrees = -Math.abs(yInputDecimalDegrees);
             if(document.getElementById("xCoordDirection").value == "W") xInputDecimalDegrees = -Math.abs(xInputDecimalDegrees);
 
-            document.getElementById("mark").style.display = "block";
-            document.getElementById("mark").style.left = (zeroX + (xInputDecimalDegrees / x_scale)) - 14;
-            document.getElementById("mark").style.top = (zeroY + (yInputDecimalDegrees / y_scale)) - 14;
+            console.log(zeroX + (xInputDecimalDegrees / x_scale));
+            console.log(zeroY + (yInputDecimalDegrees / y_scale));
 
+            document.getElementById("mark").style.display = "block";
+            document.getElementById("mark").style.left = ((zeroX + (xInputDecimalDegrees / x_scale)) * scale) - 12 * scale; 
+            document.getElementById("mark").style.top = ((zeroY + (yInputDecimalDegrees / y_scale)) * scale) - 12 * scale;
         }
-        
+
+
+        function enlarge(){
+          document.getElementById("map").style.width = "1674";
+          document.getElementById("map").style.height = "auto";
+          document.getElementById("main").style.width = "1674px";
+
+          document.getElementById("mark").style.width = "48px";
+          document.getElementById("mark").style.height = "auto";  
+
+          findCoordinate(2);
+        }
+        function minimize(){
+          document.getElementById("map").style.width = "837px";
+          document.getElementById("map").style.height = "auto";
+          document.getElementById("main").style.width = "837px";
+
+          document.getElementById("mark").style.width = "24px";
+          document.getElementById("mark").style.height = "auto"; 
+
+          findCoordinate(1);
+        }
+
+
     </script>
     <div id='main'>
-      <img id="map" src='archeagemap-hires.png'>
-      <img id="mark" src="mark.png" style="background-color: transparent;border: none; display: none;">
+      <img id="map" src='archeagemap-hires-small.png'>
+      <img id="mark" src="mark.png" height="auto" width="22px" style="background-color: transparent;border: none; display: none;">
     </div>
-    <div style="margin-left: 1200px;">
-        <form>
-            <label>X: </label>
-            <input size="1" type="text" name="xCoordDirection" id="xCoordDirection" maxlength="1" value="W">
-            <input size="1" type="text" name="xCoordDegree" id="xCoordDegree" value="4">
-            <input size="1" type="text" name="xCoordMinute" id="xCoordMinute" value="42">
-            <input size="1" type="text" name="xCoordSecond" id="xCoordSecond" value="57"><br>
-            <label>Y: </label>
-            <input size="1" type="text" name="xCoordDirection" id="yCoordDirection" maxlength="1" value="S">
-            <input size="1" type="text" name="xCoordDegree" id="yCoordDegree" value="19">
-            <input size="1" type="text" name="xCoordMinute" id="yCoordMinute" value="8">
-            <input size="1" type="text" name="xCoordSecond" id="yCoordSecond" value="50"><br>
-            
-        </form>
-        <button onclick="dothings()">yea</button>
+    
+    
+    <div id="inputdiv">
+      
+        <table>
+          <tr>
+              <td><select class="input" id="xCoordDirection">
+                <option value="W">W</option>
+                <option value="E">E</option>
+              </select></td>
+            <td><input class="input" size="1" type="text" name="xCoordDegree" id="xCoordDegree" value="4" maxlength="2"></td>
+            <td><input class="input" size="1" type="text" name="xCoordMinute" id="xCoordMinute" value="42" maxlength="2"></td>
+            <td><input class="input" size="1" type="text" name="xCoordSecond" id="xCoordSecond" value="57" maxlength="2"></td>
+            <td style="padding:10px 40px 10px 40px"></td>
+            <td><select class="input" id="yCoordDirection" >
+                <option value="N">N</option>
+                <option value="S" selected>S</option>
+              </select></td>
+            <td><input class="input" size="1" type="text" name="xCoordDegree" id="yCoordDegree" value="19" maxlength="2"></td>
+            <td><input class="input" size="1" type="text" name="xCoordMinute" id="yCoordMinute" value="8" maxlength="2"></td>
+            <td><input class="input" size="1" type="text" name="xCoordSecond" id="yCoordSecond" value="50" maxlength="2"></td>
+            <td style="padding:10px 40px 10px 40px"></td>
+            <td><button id="buttonEnlarge" onclick="enlarge()"><i class="fas fa-search-plus"></i></i></button></td>
+            <td><button id="buttonEnlarge" onclick="minimize()"><i class="fas fa-search-minus"></i></i></button></td>
+          </tr>
+          
+          <tr>
+            <td colspan="9"><button  style="display: block; width: 100%;" onclick="findCoordinate(currentScale)">SEARCH</button></td>
+          </tr>
+        </table>
     </div>
   </body>

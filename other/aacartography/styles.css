@@ -1,19 +1,38 @@
 #main {
-    /* Ensure that #main is an offset container */
-    position: relative;
+  position: relative;
+  top: 100px;    
+  margin: 0 auto;
+  text-align: left;
+  width: 837px;
   }
-  #map {
-    /* Position the image at 0,0 */
-    position: absolute;
-    left: 0px;
-    top: 0px;
-  }
-  #mark {
-    /* Position the div at 16,16 (middle of the 32x32 image */
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    background-color: white;
-    border: 1px solid black;
-    padding: 1px;
-  }
+#map {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+#mark {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: white;
+  border: 1px solid black;
+  padding: 1px;
+}
+#inputdiv{
+  margin: 0 auto;
+  text-align: left;
+  width: 837px;
+  padding-top: 10px;
+}
+.input{
+  width: 90px;
+  height: 50px;
+  font-size: 30px;
+  text-align: center;
+  padding: 0px 10px 0px 10px;
+}
+#buttonEnlarge{
+  width: 90px;
+  height: 50px;
+  font-size: 30px;
+}
