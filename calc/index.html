@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <script>
+        function sum(){
+            document.getElementById("result").value = parseFloat(document.getElementById("variableA").value) + parseFloat(document.getElementById("variableB").value);
+        }
+
+        function subtract(){
+            document.getElementById("result").value = parseFloat(document.getElementById("variableA").value) - parseFloat(document.getElementById("variableB").value);
+        }
+
+        function multiply(){
+            document.getElementById("result").value = parseFloat(document.getElementById("variableA").value) * parseFloat(document.getElementById("variableB").value);
+        }
+
+        function divide(){
+            document.getElementById("result").value = parseFloat(document.getElementById("variableA").value) / parseFloat(document.getElementById("variableB").value);
+        }
+
+        function power(){
+            document.getElementById("result").value = Math.pow(parseFloat(document.getElementById("variableA").value), parseFloat(document.getElementById("variableB").value));
+        }
+
+        function squareRoot(){
+            document.getElementById("result").value = Math.sqrt(parseFloat(document.getElementById("variableA").value), parseFloat(document.getElementById("variableB").value));
+        }
+
+        function sin(){
+            var variableA = parseFloat(document.getElementById("variableA").value) * (Math.PI / 180);
+            var variableB = parseFloat(document.getElementById("variableB").value) * (Math.PI / 180);
+            document.getElementById("result").value = "A = " + Math.sin(variableA).toFixed(2) + " B = " + Math.sin(variableB).toFixed(2);
+        }
+
+        function cosin(){
+            var variableA = parseFloat(document.getElementById("variableA").value) * (Math.PI / 180);
+            var variableB = parseFloat(document.getElementById("variableB").value) * (Math.PI / 180);
+            document.getElementById("result").value = "A = " + Math.cos(variableA).toFixed(2) + " B = " + Math.cos(variableB).toFixed(2);
+        }
+
+        function tan(){
+            var variableA = parseFloat(document.getElementById("variableA").value) * (Math.PI / 180);
+            var variableB = parseFloat(document.getElementById("variableB").value) * (Math.PI / 180);
+            document.getElementById("result").value = "A = " + Math.tan(variableA).toFixed(2) + " B = " + Math.tan(variableB).toFixed(2);
+        }
+
+        function cotan(){
+            var variableA = parseFloat(document.getElementById("variableA").value) * (Math.PI / 180);
+            var variableB = parseFloat(document.getElementById("variableB").value) * (Math.PI / 180);
+            document.getElementById("result").value = "A = " +  (1 / Math.tan(variableA)).toFixed(2) + " B = " + (1 / Math.tan(variableB)).toFixed(2);
+        }
+
+    </script>
+</head>
+<body>
+    <div id="calc-body">
+        <form name="calc-form" method="get" action="">
+            <input type="text" class="calc-button" id="variableA" placeholder="Variable A"/>
+            <input type="text" class="calc-button" id="variableB" placeholder="Variable B"/></br>
+            
+            <input type="button" value="+" onclick="sum()" style="margin-left: 10px;"/>
+            <input type="button" value="-" onclick="subtract()"/>
+            <input type="button" value="*" onclick="multiply()"/>
+            <input type="button" value="/" onclick="divide()"/>
+            <input type="button" value="^" onclick="power()"/>
+            <input type="button" value="√" onclick="squareRoot()"/>
+            <input type="button" value="sin" onclick="sin()"/>
+            <input type="button" value="cosin" onclick="cosin()"/>
+            <input type="button" value="tan" onclick="tan()"/>
+            <input type="button" value="cotan" onclick="cotan()"/>
+
+
+
+            </br><input type="text" placeholder="Result" id="result" style="margin-left:80px;"/></br>
+            </form>
+    </div>
+</body>
