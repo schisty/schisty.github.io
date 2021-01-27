@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <title></title>
+    </head>
+    <script src="perlin.js"></script>
+    <style>
+        #cellInfo{
+            float:left; 
+            position: absolute; 
+            top: 4px; 
+            z-index: 99; 
+            height: 200px; 
+            width: 300px; 
+            background-color:lightgrey;
+        }
+        #cellInfoTextField{
+            margin: 12px;
+        }
+        #mapPlace{
+            margin:8px;
+        }
+        #selector{
+            border: solid 2px red;
+            position: absolute;
+            background-color: rgba(0,0,0,0);
+            width: 20px;
+            height: 20px;
+
+        }
+        .mapCell{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-top:-4px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 80%
+        }
+    </style>
+
+    
+    <body style="width:100%; margin:0;">
+        <script>
+            function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min) ) + min;
+            }
+
+            map = new Array();
+            perlinScale = 7
+            W = 45;
+            H = 45;
+    
+            for(x = 0; x < W; x++){
+                map[x] = new Array();
+                for(y = 0; y < H; y++){
+                    map[x][y] = new Array;
+                    map[x][y][0] = ["поверхность", "камень", 1 - Math.abs(perlin.get(x / perlinScale, y / perlinScale)+0.5)];
+                    map[x][y][1] = ["поверхность", "земля", Math.abs(perlin.get(x / perlinScale, y / perlinScale)+0.5)]; 
+                    map[x][y][2] = ["воздух", "движение",  getRndInteger(0, 10) +"m/s"];
+                    map[x][y][3] = ["воздух", "кислород", getRndInteger(10, 50) + "%"];
+                    map[x][y][4] = ["воздух", "температура", getRndInteger(-15, 30) + "С"];
+                    map[x][y][5] = ["воздух", "влажность", getRndInteger(0, 75) + "%"];
+                }
+            }
+    
+            cellInfoBox = document.createElement("div");
+            cellInfoBox.setAttribute("id", "cellInfo");
+            cellInfoBox.style.left = W*20+9+"px";
+            cellInfoBoxTextField = document.createElement("div");
+            cellInfoBoxTextField.setAttribute("id", "cellInfoTextField");
+            cellInfoBox.appendChild(cellInfoBoxTextField);
+            
+            document.body.appendChild(cellInfoBox);
+
+            mainMapPlace = document.createElement("div");
+            mainMapPlace.setAttribute("id", "mapPlace");
+            mainMapPlace.style.width = W*20+"px";
+            mainMapPlace.style.height = H*20+"px";
+            document.body.appendChild(mainMapPlace);
+    
+            for(x = 0; x < W; x++){
+                for(y = 0; y < H; y++){
+                tmpCell = document.createElement("div");
+                tmpCell.setAttribute("id", "X"+x+"Y"+y);
+                tmpCell.setAttribute("class", "mapCell");
+                tmpCell.setAttribute("onmouseover", "displayInfoImage(this)");
+                tmpCell.setAttribute("onmouseleave", "removeBackgroundImage(this)");
+                tmpCell.setAttribute("onclick", "getCellInfo(this)");
+                document.getElementById("mapPlace").appendChild(tmpCell);
+                tmpCell.style.backgroundColor = "rgb("+map[x][y][0][2] * 150+","+ (map[x][y][0][2] * 150 + map[x][y][1][2] * 150) + ","+map[x][y][0][2] * 150+")"; // map[x][y][1][2] * 255 for grass
+                }
+            }
+            function displayInfoImage(element = null){
+                if(element != null){
+                    element.style.backgroundImage = "url('info-circle-solid.svg')";
+                }
+            }
+            function removeBackgroundImage(element = null){
+                if(element != null){
+                    element.style.backgroundImage = "";
+                }
+            }
+            function getCellInfo(element = null){
+                if(document.getElementById("selector")){
+                    document.getElementById("selector").remove();
+                }
+
+                if(element != null){
+                    console.log(element.getBoundingClientRect())
+                    selector = document.createElement("div");
+                    selector.setAttribute("id","selector")
+                    selector.style.left = element.getBoundingClientRect().x - 2 + "px";
+                    selector.style.top = element.getBoundingClientRect().y - 2 +"px";
+                    document.body.appendChild(selector);
+                    
+
+
+                    coords = element.id.split("Y"); 
+                    coords[0] = coords[0].replace("X", "");
+                    x = coords[0];
+                    y = coords[1];
+
+                    cellInfoBoxTextField.innerHTML = "X: " + x + " | Y: " + y + "<br>" +
+                                                     map[x][y][0][0] + ", " + map[x][y][0][1] + " " + (map[x][y][0][2]*100).toFixed(2) + "%<br>" +
+                                                     map[x][y][1][0] + ", " + map[x][y][1][1] + " " + (map[x][y][1][2]*100).toFixed(2) + "%<br>" +
+                                                     map[x][y][2][0] + ", " + map[x][y][2][1] + " " + map[x][y][2][2] + "<br>" +
+                                                     map[x][y][3][0] + ", " + map[x][y][3][1] + " " + map[x][y][3][2] + "<br>" + 
+                                                     map[x][y][4][0] + ", " + map[x][y][4][1] + " " + map[x][y][4][2] + "<br>" +
+                                                     map[x][y][5][0] + ", " + map[x][y][5][1] + " " + map[x][y][5][2];
+                }
+            }
+
+            console.table(map);
+        </script>
+
+        
+    </body>
+
+</html>
