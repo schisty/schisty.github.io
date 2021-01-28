@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <title></title>
+    </head>
+
+    <style>
+        #mapPlace{
+
+        }
+        .mapCell{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: solid 1px gray;
+
+
+        }
+    </style>
+
+    
+    <body>
+        <script>
+            function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min) ) + min;
+            }
+
+
+            map = new Array();
+    
+            W = 10;
+            H = 10;
+    
+            for(x = 0; x < W; x++){
+                map[x] = new Array();
+                for(y = 0; y < H; y++){
+                    map[x][y] = new Array;
+                    map[x][y][0] = ["поверхность", "камень", getRndInteger(1, 50) + "%"];
+                    map[x][y][1] = ["поверхность", "земля", getRndInteger(50, 100) + "%"];
+                    map[x][y][2] = ["воздух", "движение",  (Math.floor(Math.random() * 15) + 1) +"m/s"];
+                    map[x][y][3] = ["воздух", "кислород", (Math.floor(Math.random() * 100) + 1) + "%"];
+                    map[x][y][4] = ["воздух", "температура", (Math.floor(Math.random() * 30) + 1) + "С"];
+                    map[x][y][5] = ["воздух", "влажность", (Math.floor(Math.random() * 100) + 1) + "%"];
+                }
+            }
+            /*
+            map[0][1][0] = ["поверхность", "камень", "30%"];
+            map[0][1][1] = ["поверхность", "земля", "70%"];
+            map[0][1][2] = ["воздух", "движение", "5m/s"];
+            map[0][1][3] = ["воздух", "кислород", "30%"];
+            map[0][1][4] = ["воздух", "температура", "24С"];
+            map[0][1][5] = ["воздух", "влажность", "76%"];
+            */
+    
+            mainMapPlace = document.createElement("div");
+            mainMapPlace.setAttribute("id", "cellInfo");
+
+            mainMapPlace = document.createElement("div");
+            mainMapPlace.setAttribute("id", "mapPlace");
+            mainMapPlace.style.width = W*22+"px"
+            mainMapPlace.style.height = H*22+"px"
+            document.body.appendChild(mainMapPlace)
+    
+            for(x = 0; x < W; x++){
+                for(y = 0; y < H; y++){
+                tmpCell = document.createElement("div");
+                tmpCell.setAttribute("id", "X"+x+"Y"+y);
+                tmpCell.setAttribute("class", "mapCell");
+                document.getElementById("mapPlace").appendChild(tmpCell);
+                tmpCell.style.backgroundColor = "rgb(0,"+ ((map[x][y][1][2]).replace("%","") / 100) * 255 + ",0)";
+                }
+            }
+    
+            console.table(map);
+        </script>
+    </body>
+</html>

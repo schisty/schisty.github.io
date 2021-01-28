@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style>
+.mainMenuItem{display:inline-block; width:auto; margin:5px 1px; background-color:#516387; color:#CCC;padding:2px 0px; cursor:pointer; vertical-align:top; font-family:sans-serif; font-size:14px; height:16px; overflow:hidden;}
+.mainMenuItem:hover{ background-color:#8194B9; /*height:auto*/; color:white;}
+.mainMenuSubItem{width:100%; height:auto; padding:2px 10px;}
+.mainMenuSubItem:hover{background-color:rgba(255,255,255,0.3);}
+</style>
+<script language="javascript">
+menu=Array();
+menu[0]=Array("home");
+menu[1]=Array("products","Web-site", "Mobile Apps", "Games");
+menu[2]=Array("service","Web-site reparing","SEO");
+menu[3]=Array("projects","Web-sites","Apps");
+menu[3][1]=Array("Web-sites","site 1","site 2","site 3");
+menu[4]=Array("about", "Team", "Partners", "Location");
+function buildMenu(place, menuArr=menu){
+    for(i=0; i<menuArr.length; i++){
+        tmpTag=document.createElement("div");
+        tmpTag.setAttribute("onMouseOver", "openIt(this)");
+        tmpTag.setAttribute("id", "menu1L"+(i+1));
+        tmpTag.className="mainMenuItem";
+        for(j=0; j<menuArr[i].length; j++){
+            tmp2Tag=document.createElement("div");
+            tmp2Tag.innerHTML=menuArr[i][j];
+            tmp2Tag.className="mainMenuSubItem";
+            tmpTag.appendChild(tmp2Tag);
+        }
+        document.getElementById(place).appendChild(tmpTag);
+    }
+}
+
+var timer;
+
+function openIt(something=null, menuArr=menu){
+    for(i = 0; i < menuArr.length; i++){
+        document.getElementById("menu1L"+(i+1)).style.height = "16px";
+    }
+    if(something != null){
+        something.style.height="auto";
+        clearTimeout(timer);
+        closeIt(something);
+        timer = setTimeout("openIt()", 2000)
+    }
+        
+}
+/*
+function closeIt(something){
+    if(something.offsetHeight > 18){
+        something.style.height = (16 + (something.offsetHeight / 2) + "px");
+        setTimeout("")
+    }
+}*/
+
+</script>
+</head>
+<body onload="buildMenu('menuPlace')">
+<div id="menuPlace"></div>
+</body>
+</html>
