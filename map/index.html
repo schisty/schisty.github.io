@@ -56,12 +56,24 @@
                 map[x] = new Array();
                 for(y = 0; y < H; y++){
                     map[x][y] = new Array;
-                    map[x][y][0] = ["поверхность", "камень", 1 - Math.abs(perlin.get(x / perlinScale, y / perlinScale)+0.5)];
-                    map[x][y][1] = ["поверхность", "земля", Math.abs(perlin.get(x / perlinScale, y / perlinScale)+0.5)]; 
+                    map[x][y][0] = ["", "", ""];
+                    map[x][y][1] = ["поверхность", "земля", Math.abs(perlin.get(x / (perlinScale * 1.5), y / (perlinScale * 1.5))+0.5)]; 
+                    
                     map[x][y][2] = ["воздух", "движение",  getRndInteger(0, 10) +"m/s"];
                     map[x][y][3] = ["воздух", "кислород", getRndInteger(10, 50) + "%"];
                     map[x][y][4] = ["воздух", "температура", getRndInteger(-15, 30) + "С"];
                     map[x][y][5] = ["воздух", "влажность", getRndInteger(0, 75) + "%"];
+                }
+            }
+            perlin.seed();
+
+            for(x = 0; x < W; x++){
+                for(y = 0; y < H; y++){
+                    map[x][y][1][2] += Math.abs(perlin.get(x / perlinScale, y / perlinScale)); 
+                    if(map[x][y][1][2] > 1){
+                        map[x][y][1][2] = Math.floor(map[x][y][1][2]);
+                    }
+                    map[x][y][0] = ["поверхность", "камень", 1 - map[x][y][1][2]];
                 }
             }
     
