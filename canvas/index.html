@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <script language="javascript" src="KY029.js"></script>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="800" height="400" style="border:1px solid #000000;"></canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            let module1 = new KY029(ctx, false, 0, 0, 0, 0);
+            let module2 = new KY029(ctx, false, 0, 0, 100, 100);
+            let module3 = new KY029(ctx, false, 0, 0, 100, 200);
+
+            module3.setState(ctx, true, 0, 1);
+            module2.setState(ctx, true, 1, 1);
+            module1.setState(ctx, true, 1, 0);
+        </script>
+    </body>
+
+
+</html>
