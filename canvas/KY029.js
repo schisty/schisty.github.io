@@ -23,8 +23,6 @@ class KY029{
         this.RED = RED;
         this.GREEN = GREEN;
         this.ctx = ctx;
-        // this.X = X;
-        // this.Y = Y;
         this.A=(this.RED==1)?"FF":"00";
         this.B=(this.GREEN==1)?"FF":"00";
         this.res=(this.GND==true)?"#" + this.A + this.B + "00":"#000000";
