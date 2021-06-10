@@ -11,32 +11,17 @@
             var canvas = document.getElementById("myCanvas");
             var ctx = canvas.getContext("2d");
             let module1 = new KY029(ctx, false, 0, 0, 0, 0);
-            let module2 = new KY029(ctx, false, 0, 0, 100, 100);
-            let module3 = new KY029(ctx, false, 0, 0, 100, 200);
 
-            module3.setState(ctx, true, 0, 1);
-            module2.setState(ctx, true, 1, 1);
             module1.setState(ctx, true, 1, 0);
         </script>
     </body>
-    </body>
     <br>
     
-    <input type="button" onclick="module1.setState(ctx, false, 1, 0)" value="first off">
-    <input type="button" onclick="module1.setState(ctx, true, 1, 0)" value="first to red">
-    <input type="button" onclick="module1.setState(ctx, true, 1, 1)" value="first to yellow">
-    <input type="button" onclick="module1.setState(ctx, true, 0, 1)" value="first to green">
-
-    <br>
-    <input type="button" onclick="module2.setState(ctx, false, 1, 0)" value="second off">
-    <input type="button" onclick="module2.setState(ctx, true, 1, 0)" value="second to red">
-    <input type="button" onclick="module2.setState(ctx, true, 1, 1)" value="second to yellow">
-    <input type="button" onclick="module2.setState(ctx, true, 0, 1)" value="second to green">
-    <br>
-    <input type="button" onclick="module3.setState(ctx, false, 1, 0)" value="third off">
-    <input type="button" onclick="module3.setState(ctx, true, 1, 0)" value="third to red">
-    <input type="button" onclick="module3.setState(ctx, true, 1, 1)" value="third to yellow">
-    <input type="button" onclick="module3.setState(ctx, true, 0, 1)" value="third to green">
+    <input type="button" onclick="module1.setState(ctx, false, 1, 0)" value="off">
+    <input type="button" onclick="module1.setState(ctx, true, 1, 0)" value="red">
+    <input type="button" onclick="module1.setState(ctx, true, 1, 1)" value="yellow">
+    <input type="button" onclick="module1.setState(ctx, true, 0, 1)" value="green">
 
     <br><br><br>made by Vyacheslav Pisarev TA-19V
+
 </html>

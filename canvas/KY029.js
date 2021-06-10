@@ -7,15 +7,19 @@ class KY029{
         this.color = color;
         this.X = X;
         this.Y = Y;
-        ctx.fillStyle = "#505050";
-        ctx.fillRect(this.X + 20, this.Y + 10, 150, 75);
+        ctx.fillStyle = "#303030";
+        ctx.fillRect(this.X + 20, this.Y + 10, 100, 75);
         ctx.fillStyle = "#909090";
-        ctx.fillRect(this.X + 0, this.Y + 20, 30, 10);
-        ctx.fillRect(this.X + 0, this.Y + 40, 30, 10);
-        ctx.fillRect(this.X + 0, this.Y + 60, 30, 10);
+        ctx.fillRect(this.X + 0, this.Y + 25, 30, 5);
+        ctx.fillRect(this.X + 0, this.Y + 45, 30, 5);
+        ctx.fillRect(this.X + 0, this.Y + 65, 30, 5);
+
+        ctx.fillRect(this.X + 70, this.Y + 25, 60, 5);
+        ctx.fillRect(this.X + 70, this.Y + 45, 60, 5);
+        ctx.fillRect(this.X + 70, this.Y + 65, 60, 5);
         ctx.fillStyle = color;
-        ctx.fillRect(this.X + 150, this.Y + 20, 5, 55);
-        ctx.fillRect(this.X + 150, this.Y + 30, 40, 35);
+        ctx.fillRect(this.X + 130, this.Y + 20, 10, 55);
+        ctx.fillRect(this.X + 130, this.Y + 30, 50, 35);
     }
 
     setState(ctx, GND = false, RED = 0, GREEN = 0){
@@ -29,6 +33,7 @@ class KY029{
 
         this.draw(this.ctx, this.res, this.X, this.Y)
         return this.res;
+        
     }
 
     
